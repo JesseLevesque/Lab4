@@ -1,0 +1,58 @@
+﻿@page
+@model Lab3.Pages_User.IndexModel
+@{
+	ViewData["Title"] = "Profile Settings";
+}
+
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="UserInfo.UserId" />
+			<div class="form-group">
+				<label asp-for="UserInfo.Name" class="control-label"></label>
+				<input asp-for="UserInfo.Name" class="form-control" />
+				<span asp-validation-for="UserInfo.Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.Email" class="control-label"></label>
+				<input asp-for="UserInfo.Email" class="form-control" />
+				<span asp-validation-for="UserInfo.Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.StreetNumber" class="control-label"></label>
+				<input asp-for="UserInfo.StreetNumber" class="form-control" />
+				<span asp-validation-for="UserInfo.StreetNumber" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.StreetName" class="control-label"></label>
+				<input asp-for="UserInfo.StreetName" class="form-control" />
+				<span asp-validation-for="UserInfo.StreetName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.PostalCode" class="control-label"></label>
+				<input asp-for="UserInfo.PostalCode" class="form-control" />
+				<span asp-validation-for="UserInfo.PostalCode" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.City" class="control-label"></label>
+				<input asp-for="UserInfo.City" class="form-control" />
+				<span asp-validation-for="UserInfo.City" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.Province" class="control-label"></label>
+				<input asp-for="UserInfo.Province" class="form-control" />
+				<span asp-validation-for="UserInfo.Province" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="UserInfo.Phone" class="control-label"></label>
+				<input asp-for="UserInfo.Phone" class="form-control" />
+				<span asp-validation-for="UserInfo.Phone" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<input type="submit" value="Save" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>

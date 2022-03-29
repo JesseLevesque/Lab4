@@ -1,0 +1,18 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity
+@model IndexModel
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+	ViewData["Title"] = "Home page";
+
+	ViewBag.message = "hello";
+}
+
+<div class="text-center">
+
+
+	<h1 class="display-4">Welcome, @Model.UserEmail </h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
