@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Lab3.Migrations
+namespace Lab4.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
     [Migration("20220329154348_identity")]
@@ -20,7 +20,7 @@ namespace Lab3.Migrations
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Lab3.Models.Product", b =>
+            modelBuilder.Entity("Lab4.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace Lab3.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("Lab3.Models.User", b =>
+            modelBuilder.Entity("Lab4.Models.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()

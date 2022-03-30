@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Lab3": {
+    "Lab4": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

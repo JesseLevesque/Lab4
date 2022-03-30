@@ -1,9 +1,9 @@
 
-using Lab3.Models;
+using Lab4.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-namespace Lab3.Pages_User
+namespace Lab4.Pages_User
 {
 	public class IndexModel : PageModel
 	{

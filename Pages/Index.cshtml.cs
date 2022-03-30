@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Lab3.Pages;
+namespace Lab4.Pages;
 
 public class IndexModel : PageModel
 {
@@ -29,13 +29,13 @@ public class IndexModel : PageModel
 				{
 					UserEmail = email.Value;
 					_logger.Log(LogLevel.Information, email.Value);
+				} else {
+					_logger.Log(LogLevel.Information, "***NO EMAIL DETECTED, PANIC MODE ENGAGED!***");
 				}
-
 				// foreach (var cl in claimsIdentity.Claims)
 				// {
-				// 	
+				// 	_logger.Log(LogLevel.Information, "Banana");
 				// }
-
 			}
 		}
 	}

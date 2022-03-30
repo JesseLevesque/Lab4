@@ -7,17 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Lab3.Models;
+using Lab4.Models;
 
-namespace Lab3.Pages_Product
+namespace Lab4.Pages_Product
 {
     public class EditModel : PageModel
     {
+        private readonly ILogger<IndexModel> _logger;
         private readonly StoreDBContext _context;
 
-        public EditModel(StoreDBContext context)
+        public EditModel(StoreDBContext context, ILogger<IndexModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         [BindProperty]
@@ -25,18 +27,29 @@ namespace Lab3.Pages_Product
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
+            if (User.Identity.IsAuthenticated)
             {
-                return NotFound();
+                _logger.Log(LogLevel.Information, "**User is authenticated!***");
+
+
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                Product = await _context.Product.FirstOrDefaultAsync(m => m.ProductId == id);
+
+                if (Product == null)
+                {
+                    return NotFound();
+                }
+                return Page();
             }
-
-            Product = await _context.Product.FirstOrDefaultAsync(m => m.ProductId == id);
-
-            if (Product == null)
+            else
             {
-                return NotFound();
+                _logger.Log(LogLevel.Information, "**NO user is  authenticated! BAD VERY BAD!***");
+                return RedirectToPage("./Index");
             }
-            return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.

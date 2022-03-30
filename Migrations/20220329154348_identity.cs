@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Lab3.Migrations
+namespace Lab4.Migrations
 {
     public partial class identity : Migration
     {

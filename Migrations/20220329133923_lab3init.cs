@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Lab3.Migrations
+namespace Lab4.Migrations
 {
-    public partial class lab3init : Migration
+    public partial class Lab4init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

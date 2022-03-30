@@ -1,5 +1,9 @@
 @page
-@model Lab3.Pages_Product.DetailsModel
+@model Lab4.Pages_Product.DetailsModel
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Details";
@@ -32,6 +36,9 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Product.ProductId">Edit</a> |
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.Product.ProductId">Edit</a>
+    }
     <a asp-page="./Index">Back to List</a>
 </div>

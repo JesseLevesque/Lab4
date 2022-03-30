@@ -6,22 +6,32 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Lab3.Models;
+using Lab4.Models;
 
-namespace Lab3.Pages_Product
+namespace Lab4.Pages_Product
 {
     public class CreateModel : PageModel
     {
+        private readonly ILogger<IndexModel> _logger;
         private readonly StoreDBContext _context;
 
-        public CreateModel(StoreDBContext context)
+        public CreateModel(StoreDBContext context, ILogger<IndexModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public IActionResult OnGet()
         {
-            return Page();
+            if (User.Identity.IsAuthenticated)
+            {
+                return Page();
+            }
+            else
+            {
+                _logger.Log(LogLevel.Information, "**NO user is  authenticated! BAD VERY BAD!***");
+                return RedirectToPage("./Index");
+            }
         }
 
         [BindProperty]

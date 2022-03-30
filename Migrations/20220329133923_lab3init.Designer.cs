@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Lab3.Migrations
+namespace Lab4.Migrations
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20220329133923_lab3init")]
-    partial class lab3init
+    [Migration("20220329133923_Lab4init")]
+    partial class Lab4init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace Lab3.Migrations
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Lab3.Models.Product", b =>
+            modelBuilder.Entity("Lab4.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace Lab3.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("Lab3.Models.User", b =>
+            modelBuilder.Entity("Lab4.Models.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
